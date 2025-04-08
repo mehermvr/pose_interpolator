@@ -1,6 +1,6 @@
 # SE(3) Pose Interpolation
 
-A minimal Python package for smooth SE(3) pose interpolation between 4x4 transformation matrices, implemented in C++ with pybind11 and Sophus.
+A minimal Python package for SE(3) pose interpolation between 4x4 transformation matrices, implemented in C++ with pybind11 and Sophus.
 
 ## Installation
 
@@ -10,6 +10,19 @@ pip install "pose_interpolator @ git+https://github.com/mehermvr/pose_interpolat
 
 
 ## Usage
+
+You want
+
+$$
+T(t) = T_0 \exp(t \cdot \log(T_0^{-1} T_1))
+$$
+
+Where:
+- $T_0$ = Start SE3 pose
+- $T_1$ = End SE3 pose
+- $t$ = Interpolation factor ∈ [0,1]
+- $\exp$ = Group exponential 
+- $\log$ = Group logarithm
 
 ```python
 import numpy as np
