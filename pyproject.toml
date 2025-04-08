@@ -1,0 +1,17 @@
+[build-system]
+requires = ["scikit-build-core", "pybind11"]
+build-backend = "scikit_build_core.build"
+
+[project]
+name = "pose_interpolator"
+version = "0.0.1"
+requires-python = ">=3.8"
+dependencies = ["numpy"]
+
+[tool.scikit-build]
+build-dir = "build/{wheel_tag}"
+cmake.minimum-version = "3.28"
+editable.mode = "redirect"
+editable.rebuild = true
+editable.verbose = true
+wheel.packages = ["pose_interpolator"]
